@@ -15,7 +15,7 @@
 namespace bip = boost::interprocess;
 namespace fs = std::filesystem;
 
-struct alignas(64) SharedData {  // Ensure memory alignment
+struct alignas(64) SharedData {  
     double left_rpm;
     double right_rpm;
     double linear_vel;
@@ -136,7 +136,7 @@ public:
             const void* blob = sqlite3_column_blob(stmt, 0);
             int blob_size = sqlite3_column_bytes(stmt, 0);
     
-            if (blob_size < 16) {  // Ensure we have enough bytes for two doubles
+            if (blob_size < 16) {  // ensuring we have enough bytes for two doubles
                 std::cerr << "[WARN] Skipping small/invalid data entry." << std::endl;
                 continue;
             }
@@ -147,7 +147,7 @@ public:
     eprosima::fastcdr::FastBuffer buffer((char*)blob, blob_size);
     eprosima::fastcdr::Cdr deserializer(buffer);
 
-    uint32_t unused_header;  // Read and discard ROS2 message header (first 4 bytes)
+    uint32_t unused_header;  
     deserializer >> unused_header;
 
     double linear_vel, angular_vel;
@@ -161,7 +161,7 @@ public:
     std::cerr << "[ERROR] Deserialization failed: " << e.what() << std::endl;
 }
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));  // Simulate real-time processing
+            std::this_thread::sleep_for(std::chrono::milliseconds(100)); //simulating real-time 
         }
     
         if (rc != SQLITE_DONE) {

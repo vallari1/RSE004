@@ -1,6 +1,6 @@
-# Differential Drive RPM Calculator & Visualizer wihout ROS
+# Differential Drive RPM Calculator & Visualizer without ROS
 
-A robust system for processing ROS 2 `cmd_vel` messages from `.db3` bag files, computing wheel RPMs using differential drive kinematics, and visualizing the results in real-time.
+A  system for processing ROS 2 `cmd_vel` messages from `.db3` bag files, computing wheel RPMs using differential drive kinematics, and visualizing the results in real-time.
 
 ## System Architecture
 

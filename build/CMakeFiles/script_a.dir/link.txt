@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/script_a.dir/src/bag_reader.cpp.o -o script_a  -Wl,-rpath,/opt/ros/jazzy/lib /opt/ros/jazzy/lib/libfastcdr.so.2.2.5 -lsqlite3 -lrt -lpthread -lpthread -lrt /usr/lib/x86_64-linux-gnu/libsqlite3.so 
